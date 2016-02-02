@@ -1,0 +1,9 @@
+<div ng-show="!SoundCloud.player">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<div ng-show="SoundCloud.player">
+  {{SoundCloud.player}}
+</div>
+<div ng-if="SoundCloud.player._result">
+  {{SoundCloud.player._result.html}}
+</div>
