@@ -1,13 +1,14 @@
 Musicas = new Meteor.Collection("musicas");
 
+/*Permissions for the collection. Here are all the permissions for who can do what.*/
 Musicas.allow({
-  insert: function(userId, musica){
-    return userId && musica.owner === userId;
+  insert: function(userId){
+    return userId ;
   },
-  update: function(userId, musica){
-    return userId && musica.owner === userId;
+  update: function(userId){
+    return userId;
   },
-  remove: function(userId, usica){
-    return userId && musica.owner === userId;
+  remove: function(userId){
+    return userId;
   }
 });

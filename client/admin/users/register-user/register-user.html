@@ -1,0 +1,34 @@
+<md-content layout="row" layout-align="center start" layout-fill layout-margin layout-xl="column">
+  <div flex>
+    <h1>Cadastro</h1>
+      <div layout="row" layout-fill>
+        <form name="login-form">
+          <div>
+            <md-input-container>
+              <label>Nome</label>
+              <input ng-model="registerUser.credentials.nome">
+            </md-input-container>
+          </div>
+          <div>
+          <md-input-container>
+            <label>E-mail</label>
+            <input type="email" ng-model="registerUser.credentials.email">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <label>Senha</label>
+            <input type="password" ng-model="registerUser.credentials.password">
+          </md-input-container>
+        </div>
+        <div >
+          <md-button ng-click="registerUser.register()" aria-label="register ">Cadastrar</md-button>
+        </div>
+        </form>
+      </div>
+      <md-toolbar ng-show="register.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+        <p class="md-body-1">{{ register.error }}</p>
+      </md-toolbar>
+  </div>
+
+</md-content>

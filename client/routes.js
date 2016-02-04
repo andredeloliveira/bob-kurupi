@@ -37,9 +37,13 @@ angular.module('bobKurupi')
         url: '/cadastro',
         template: '<register-user></register-user>'
       })
-      .state('resetpw'{
+      .state('resetpw', {
         url: 'resetpw',
         template: '<resetpw></resetpw>'
+      })
+      .state('admin',{
+        url: '/admin',
+        template: '<admin-musicas></admin-musicas>'
       });
 
 

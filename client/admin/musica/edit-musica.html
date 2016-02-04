@@ -1,0 +1,25 @@
+<md-content flex="66">
+  <form>
+    <md-input-container>
+      <label>Nome </label>
+      <input type="text" ng-model="editMusica.musica.nome">
+    </md-input-container>
+    <md-input-container>
+      <label> Descrição </label>
+      <input type="text" ng-model="editMusica.musica.descricao">
+    </md-input-container>
+    <md-input-container>
+      <label> Youtube </label>
+      <input type="text" ng-model="editMusica.musica.youtube">
+    </md-input-container>
+    <md-input-container>
+      <label> SoundCloud </label>
+      <input type="text" ng-model="editMusica.musica.soundcloud">
+    </md-input-container>
+    <md-input-container>
+      <label> Spotify </label>
+      <input type="text" ng-model="editMusica.musica.spotify">
+    </md-input-container>
+    <md-button ng-click="editMusica.updateMusica()">Atualizar</md-button>
+  </form>
+</md-content>

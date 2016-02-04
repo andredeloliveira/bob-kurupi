@@ -1,0 +1,55 @@
+<md-container>
+<form>
+<div layout="column">
+  <md-input-container>
+    <label>Música</label>
+    <input ng-model="adminMusicas.musica.nome" required>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container class="md-block">
+        <label>Descrição da música</label>
+        <textarea ng-model="adminMusicas.musica.descricao" columns="1" md-maxlength="150" rows="5"></textarea>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>Youtube</label>
+    <input ng-model="adminMusicas.musica.youtube" >
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>Spotify</label>
+    <input ng-model="adminMusicas.musica.spotify">
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>SoundCloud</label>
+    <input ng-model="adminMusicas.musica.soundcloud" required>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-button ng-click="adminMusicas.addMusica()">Adicionar Música</md-button>
+</div>
+</form>
+
+<div >
+  <md-list layout="column">
+    <md-subheader class="md-no-sticky">Músicas</md-subheader>
+    <md-list-item class="secondary-button-padding" ng-repeat="musica in adminMusicas.musicas">
+      <p>{{musica.nome}}</p>
+      <p>
+        {{musica.descricao}}
+      </p>
+      <p>
+        {{musica.youtube}}
+      </p>
+      <md-button class="md-raised md-warn" ng-click="adminMusicas.deleteMusica(musica)">X</md-button>
+      <md-button class="md-raised md-warn" ng-click="adminMusicas.toggleEdit(musica)">Editar</md-button>
+    </md-list-item>
+</md-list>
+</div>
+
+</md-container>

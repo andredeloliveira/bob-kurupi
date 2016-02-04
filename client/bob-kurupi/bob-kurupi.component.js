@@ -14,6 +14,10 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
           return Meteor.user();
         }
       });
+
+      this.logout = () => {
+        Accounts.logout();
+      };
     }
   }
 });

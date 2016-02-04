@@ -22,6 +22,15 @@ angular.module('bobKurupi').directive('login', function(){
           }
         });
       };
+
+      this.loginFacebook = () => {
+        Meteor.loginWithFacebook({}, (err) =>{
+          if(err){
+            this.error = err;
+          }
+          $state.go('home');
+        });
+      }
       //end of the controller
     }
   }
