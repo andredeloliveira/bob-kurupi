@@ -1,0 +1,30 @@
+<div layout="row" layout-align="center center">
+  <div flex>
+    <h3>Adicione novas fotos, WOW</h3>
+    <div ng-hide="adminImagens.cropImgSrc" ngf-drop ngf-select
+      ngf-change="adminImagens.addImages($files)"
+      ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box"
+      ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'"
+      ngf-drop-avaliable="true">
+      <div>Clique aqui para selecionar a imagem</div>
+      <div><strong>OU</strong></div>
+      Você pode arrastar aqui.
+    </div>
+    <div ng-show="adminImagens.cropImgSrc" class="ng-crop-container">
+      <h3>Ótimo! agora é só editar a sua imagem.</h3><br/>
+      <md-button aria-label="Salvar imagem" ng-click="adminImagens.saveCroppedImage()" ng-disable="!adminImagens.cropImgSrc">Salvar Imagem</md-button>
+      <img-crop image="adminImagens.cropImgSrc" result-image="adminImagens.myCroppedImage" area-type="square"></img-crop>
+    </div>
+  </div>
+
+</div>
+<div layout="row">
+  <div flex>
+    <ul>
+      <li ng-repeat="image in adminImagens.images">
+        <img ng-src="{{ image.url() }}" alt="Bob Kurupi" />
+        <md-button ng-click="adminImagens.removeImage(image)" class="md-raised md-warn">Excluir</md-button>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,14 +1,14 @@
 Agenda = new Meteor.Collection("agenda");
 
 Agenda.allow({
-  insert: function(userId, itemAgenda){
-    return userId && itemAgenda.owner === userId;
+  insert: function(userId){
+    return userId ;
   },
-  update: function(userId, itemAgenda){
-    return userId && itemAgenda.owner === userId;
+  update: function(userId){
+    return userId ;
   },
-  remove: function(userId, itemAgenda){
-    return userId && itemAgenda.owner === userId;
+  remove: function(userId){
+    return userId ;
   }
 
 });

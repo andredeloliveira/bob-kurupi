@@ -1,0 +1,44 @@
+<md-container>
+<form>
+<div layout="column">
+  <md-input-container>
+    <label>Nome</label>
+    <input ng-model="adminVideos.video.nome" required>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container class="md-block">
+        <label>URL</label>
+        <textarea ng-model="adminVideos.video.url" columns="1" md-maxlength="150" rows="5"></textarea>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-button ng-click="adminVideos.addVideo()">Adicionar Vídeo</md-button>
+</div>
+</form>
+
+<div >
+  <md-list >
+    <md-subheader class="md-no-sticky">Vídeos</md-subheader>
+
+    <md-list-item class="item-list" ng-repeat="video in adminVideos.videos" layout-xs="column" layout="row"
+    layout-align="center center">
+      <div flex="20">
+        <p>{{video.nome}}</p>
+      </div>
+      <div flex="20">
+        <p>
+          {{video.url}}
+        </p>
+      </div>
+      <div flex="20">
+          <md-button class="md-raised md-warn" ng-click="adminVideos.deleteVideo(video)">X</md-button>
+      </div>
+      <div flex="20">
+          <md-button class="md-raised md-warn" ng-click="adminVideos.toggleEdit(video)">Editar</md-button>
+      </div>
+    </md-list-item>
+</md-list>
+</div>
+
+</md-container>

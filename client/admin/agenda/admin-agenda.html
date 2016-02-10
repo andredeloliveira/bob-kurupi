@@ -1,0 +1,73 @@
+<md-container layout="column">
+<form>
+<div layout="column">
+  <md-input-container>
+    <label>Nome evento</label>
+    <input ng-model="adminAgenda.evento.nome" required>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container class="md-block">
+        <label>Descrição </label>
+        <textarea ng-model="adminAgenda.evento.descricao" columns="1" md-maxlength="150" rows="5"></textarea>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>Local (Latitude)</label>
+    <input ng-model="adminAgenda.evento.map.latitude" >
+  </md-input-container>
+  <md-input-container>
+    <label>Local (Longitude)</label>
+    <input ng-model="adminAgenda.evento.map.longitude" >
+  </md-input-container>
+</div>
+<div layout="column">
+    <md-datepicker ng-model="adminAgenda.evento.data" md-placeholder="Data"></md-datepicker>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>Preço</label>
+    <input ng-model="adminAgenda.evento.preco" required>
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-input-container>
+    <label>Evento Facebook</label>
+    <input ng-model="adminAgenda.evento.facebook">
+  </md-input-container>
+</div>
+<div layout="column">
+  <md-button ng-click="adminAgenda.addEvento()">Adicionar evento</md-button>
+</div>
+</form>
+</md-container>
+<md-container layout="column">
+  <div>
+    <md-list layout="column">
+      <md-subheader class="md-no-sticky">Eventos</md-subheader>
+      <md-list-item class="item-list" ng-repeat="evento in adminAgenda.eventos" layout-xs="column" layout="row"
+      layout-align="center center">
+      <div flex="20">
+        <p>{{evento.nome}}</p>
+      </div>
+      <div flex="20">
+        <p>
+          {{'Latitude:  '+evento.map.latitude + ' Longitude: '+ evento.map.longitude }}
+        </p>
+      </div>
+      <div flex="20">
+        <p>
+          {{evento.data | date}}
+        </p>
+      </div>
+      <div flex="20">
+        <md-button class="md-raised md-warn" ng-click="adminAgenda.deleteEvento(evento)">X</md-button>
+      </div>
+      <div flex="20">
+          <md-button class="md-raised md-warn" ng-click="adminAgenda.toggleEdit(evento)">Editar</md-button>
+      </div>
+      </md-list-item>
+  </md-list>
+  </div>
+</md-container>

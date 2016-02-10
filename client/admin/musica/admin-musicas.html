@@ -36,18 +36,30 @@
 </form>
 
 <div >
-  <md-list layout="column">
+  <md-list >
     <md-subheader class="md-no-sticky">Músicas</md-subheader>
-    <md-list-item class="secondary-button-padding" ng-repeat="musica in adminMusicas.musicas">
-      <p>{{musica.nome}}</p>
-      <p>
-        {{musica.descricao}}
-      </p>
-      <p>
-        {{musica.youtube}}
-      </p>
-      <md-button class="md-raised md-warn" ng-click="adminMusicas.deleteMusica(musica)">X</md-button>
-      <md-button class="md-raised md-warn" ng-click="adminMusicas.toggleEdit(musica)">Editar</md-button>
+
+    <md-list-item class="item-list" ng-repeat="musica in adminMusicas.musicas" layout-xs="column" layout="row"
+    layout-align="center center">
+      <div flex="20">
+        <p>{{musica.nome}}</p>
+      </div>
+      <div flex="20">
+        <p>
+          {{musica.descricao}}
+        </p>
+      </div>
+      <div flex="20">
+        <p>
+          {{musica.youtube}}
+        </p>
+      </div>
+      <div flex="20">
+          <md-button class="md-raised md-warn" ng-click="adminMusicas.deleteMusica(musica)">X</md-button>
+      </div>
+      <div flex="20">
+          <md-button class="md-raised md-warn" ng-click="adminMusicas.toggleEdit(musica)">Editar</md-button>
+      </div>
     </md-list-item>
 </md-list>
 </div>

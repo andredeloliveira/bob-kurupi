@@ -1,0 +1,29 @@
+<md-content  layout="column" class="edit-dialog">
+  <form>
+    <md-input-container flex>
+      <label>Nome </label>
+      <input type="text" ng-model="editEvento.evento.nome">
+    </md-input-container>
+    <md-input-container flex>
+      <label> Descrição </label>
+      <input type="text" ng-model="editEvento.evento.descricao">
+    </md-input-container>
+    <md-datepicker ng-model="editEvento.evento.data" md-placeholder="Data"></md-datepicker>
+    <md-input-container flex>
+      <label> Local (Latitude)</label>
+      <input type="text" ng-model="editEvento.evento.map.latitude">
+    </md-input-container>
+    <md-input-container flex>
+      <label>Local (Longitude)</label>
+      <input type="text" ng-model="editEvento.evento.map.longitude">
+    </md-input-container>
+    <md-input-container flex>
+      <label> Preço </label>
+      <input type="text" ng-model="editEvento.evento.preco">
+    </md-input-container>
+    <div flex>
+      <md-button ng-click="editEvento.updateEvento()">Atualizar</md-button>
+      <md-button ng-click="editEvento.close()">Fechar</md-button>
+    </div>
+  </form>
+</md-content>

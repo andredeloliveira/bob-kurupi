@@ -17,12 +17,6 @@ angular.module('bobKurupi').directive('adminMusicas', function(){
 
       /*helpers that gather the data to the $scope variable (as well as this)*/
       this.helpers({
-          isLoggedIn: () => {
-            return Meteor.userId();
-          },
-          isAdmin: () => {
-            return Meteor.user();
-          },
           musicas: () => {
             return Musicas.find({});
           }
@@ -41,6 +35,13 @@ angular.module('bobKurupi').directive('adminMusicas', function(){
       /*Add a new song in the the list of music;*/
       this.addMusica = () => {
         Musicas.insert(this.musica);
+        this.musica = {
+          nome: '',
+          descricao: '',
+          youtube: '',
+          spotify: '',
+          soundcloud: ''
+        };
       };
       /*delete a song from the list of music*/
       this.deleteMusica = (musica) => {

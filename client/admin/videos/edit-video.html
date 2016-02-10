@@ -1,0 +1,14 @@
+<md-content flex="66" class="edit-dialog">
+  <form>
+    <md-input-container>
+      <label>Nome </label>
+      <input type="text" ng-model="editVideo.video.nome">
+    </md-input-container>
+    <md-input-container>
+      <label> URL </label>
+      <input type="text" ng-model="editVideo.video.url">
+    </md-input-container>
+    <md-button ng-click="editVideo.updateVideo()">Atualizar</md-button>
+    <md-button ng-click="editVideo.close()">Fechar</md-button>
+  </form>
+</md-content>

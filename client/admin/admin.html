@@ -1,0 +1,49 @@
+<md-content>
+  <div>
+    <h3>Painel de Administração</h3>
+    <p>
+      Bem-vindo ao painel de administração. Aqui você pode gerenciar as informações da sua aplicação.
+    </p>
+  </div>
+
+  <div layout="row" layout-align="center center" layout-xs="column" class="hide-scroll">
+    <div flex>
+
+        <i class="fa fa-microphone admin-icons"></i>
+        <div>
+          <md-button class="admin-buttons-left" ng-click="admin.goMusicasAdmin()">Músicas</md-button>
+        </div>
+    </div>
+    <div flex>
+        <i class="fa fa-calendar admin-icons" ></i>
+        <div>
+          <md-button class="admin-buttons-right" ng-click="admin.goAgendaAdmin()">Agenda</md-button>
+        </div>
+    </div>
+    <div flex>
+        <i class="fa fa-camera admin-icon-alone"></i>
+        <div>
+          <md-button class="admin-button-alone" ng-click="admin.goImagens()">Imagens</md-button>
+        </div>
+    </div>
+    <div flex>
+      <i class="fa fa-youtube admin-icons"></i>
+      <div>
+        <md-button class="admin-button-alone" ng-click="admin.goVideos()">Vídeos</md-button>
+      </div>
+    </div>
+  </div>
+
+  <div  class="admin-content" ng-show="admin.showAdminOption(1)">
+    <admin-musicas></admin-musicas>
+  </div>
+  <div class="admin-content" ng-show="admin.showAdminOption(2)">
+    <admin-agenda></admin-agenda>
+  </div>
+  <div class="admin-content" ng-show="admin.showAdminOption(3)">
+    <admin-imagens></admin-imagens>
+  </div>
+  <div class="admin-content" ng-show="admin.showAdminOption(4)">
+    <admin-videos></admin-videos>
+  </div>
+</md-content>

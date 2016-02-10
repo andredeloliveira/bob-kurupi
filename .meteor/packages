@@ -27,3 +27,9 @@ angularui:angular-ui-bootstrap
 angular:angular-material
 accounts-facebook
 service-configuration
+veekungx:sc-date-time
+fortawesome:fontawesome
+cfs:standard-packages
+cfs:gridfs
+danialfarid:ng-file-upload
+alexk111:ng-img-crop

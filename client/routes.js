@@ -43,7 +43,7 @@ angular.module('bobKurupi')
       })
       .state('admin',{
         url: '/admin',
-        template: '<admin-musicas></admin-musicas>'
+        template: '<admin></admin>'
       });
 
 

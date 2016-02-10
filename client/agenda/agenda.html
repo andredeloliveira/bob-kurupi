@@ -1,0 +1,17 @@
+<h1>Agenda de Shows</h1>
+<md-content >
+  <md-list >
+    <md-list-item ng-repeat="evento in agenda.agenda" layout="row" layout-xs="column" >
+      <div flex>
+        <h2>{{evento.nome}}</h2>
+      </div>
+      <div flex>
+        <p>
+          {{evento.data | date}}
+        </p>
+      </div>
+
+      <md-button class="md-raised md-primary">Ver detalhes</md-button>
+    </md-list-item>
+  </md-list>
+</md-content>
