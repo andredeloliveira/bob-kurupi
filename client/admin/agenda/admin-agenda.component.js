@@ -20,6 +20,7 @@ angular.module('bobKurupi').directive('adminAgenda', function(){
       this.evento = {
         nome: '',
         descricao: '',
+        cidade:'',
         map: {
           latitude: '',
           longitude: ''
@@ -41,6 +42,7 @@ angular.module('bobKurupi').directive('adminAgenda', function(){
         this.evento = {
           nome: '',
           descricao: '',
+          cidade: '',
           map: {
             latitude: '',
             longitude: ''
@@ -85,7 +87,8 @@ angular.module('bobKurupi').directive('adminAgenda', function(){
                   'map': this.evento.map,
                   'data': this.evento.data,
                   'preco': this.evento.preco,
-                  'facebook': this.evento.facebook
+                  'facebook': this.evento.facebook,
+                  'cidade': this.evento.cidade
                   }
                 });
                 console.log('done! EVento updated');

@@ -18,8 +18,8 @@ This is an non-profit open-source software.
 
 ##Tech stack
 
-The stack used is Meteor.js['http://meteorjs.com'] (full-stack JavaScript framework). Which has Node.js[http://nodejs.org] on the server side and MongoDB as
-a NoSQL database. For the client though, Angular.js['http://angularjs.org'] is on the way, providing clear and concise code as well as routing for the client side.
+The stack used is [Meteor.js](http://meteorjs.com) (full-stack JavaScript framework). Which has [Node.js](http://nodejs.org) on the server side and MongoDB as
+a NoSQL database. For the client though, [Angular.js](http://angularjs.org) is on the way, providing clear and concise code as well as routing for the client side.
 
 
 ###Update

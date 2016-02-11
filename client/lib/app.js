@@ -11,3 +11,12 @@
 */
 angular.module('bobKurupi', ['angular-meteor', 'ui.router', 'accounts.ui',
 'uiGmapgoogle-maps','ngMaterial', 'scDateTime','ngFileUpload', 'ngImgCrop']);
+
+/*configuration for GoogleAPI provider, which the key and other libraries are set*/
+angular.module('bobKurupi').config(function(uiGmapGoogleMapApiProvider){
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyCM6K5wH7Hw7u714n08BF4pdESJpDck85Q',
+    v: '3.20',
+    libraries: 'weather,geometry,visualization'
+  });
+});

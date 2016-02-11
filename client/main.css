@@ -1,3 +1,12 @@
+h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin-left: 60%;
+  margin-top: 80px;
+  font-size: 3em;
+  background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
+  background: -moz-linear-gradient(0deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
+  background: linear-gradient(0deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
+}
 .admin-icons {
   font-size: 10em;
   margin-left: 35%;
@@ -51,6 +60,10 @@
    margin-left: 10px;
    margin-bottom: 20px;
  }
+ .logo-nav {
+   width: 100px;
+   height: 100px;
+ }
 
  .drop-box.dragover {
    border: 5px dashed blue;
@@ -66,4 +79,19 @@
 }
 .ng-crop-container {
   height: 400px;
+}
+.angular-google-map-container {
+  width: 400px;
+  height: 400px;
+}
+.image-dialog-container {
+  max-width: 500px;
+  max-height: 500px;
+}
+.teste {
+  width: 500px;
+  height: 500px;
+}
+.barra-nav {
+  background-color: #000000 !important;
 }

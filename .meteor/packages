@@ -21,7 +21,6 @@ dotansimha:accounts-ui-angular
 tmeasday:publish-counts
 check
 email
-angularui:angular-google-maps
 less
 angularui:angular-ui-bootstrap
 angular:angular-material
@@ -33,3 +32,4 @@ cfs:standard-packages
 cfs:gridfs
 danialfarid:ng-file-upload
 alexk111:ng-img-crop
+angularui:angular-google-maps

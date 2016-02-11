@@ -14,6 +14,10 @@
 </div>
 <div layout="column">
   <md-input-container>
+    <label>Local/Cidade</label>
+    <input ng-model="adminAgenda.evento.cidade" >
+  </md-input-container>
+  <md-input-container>
     <label>Local (Latitude)</label>
     <input ng-model="adminAgenda.evento.map.latitude" >
   </md-input-container>
@@ -48,23 +52,24 @@
       <md-subheader class="md-no-sticky">Eventos</md-subheader>
       <md-list-item class="item-list" ng-repeat="evento in adminAgenda.eventos" layout-xs="column" layout="row"
       layout-align="center center">
-      <div flex="20">
+      <div flex>
         <p>{{evento.nome}}</p>
       </div>
-      <div flex="20">
+      <div flex>
         <p>
           {{'Latitude:  '+evento.map.latitude + ' Longitude: '+ evento.map.longitude }}
         </p>
       </div>
-      <div flex="20">
+      <div flex>
         <p>
           {{evento.data | date}}
         </p>
       </div>
-      <div flex="20">
-        <md-button class="md-raised md-warn" ng-click="adminAgenda.deleteEvento(evento)">X</md-button>
+      <div flex>
+        {{evento.cidade}}
       </div>
-      <div flex="20">
+      <div flex>
+        <md-button class="md-raised md-warn" ng-click="adminAgenda.deleteEvento(evento)">X</md-button>
           <md-button class="md-raised md-warn" ng-click="adminAgenda.toggleEdit(evento)">Editar</md-button>
       </div>
       </md-list-item>

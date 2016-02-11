@@ -12,7 +12,7 @@ angular.module('bobKurupi')
         template: '<musicas></musicas>',
       })
       .state('musica-detalhes', {
-        url: '/musicas/musicaId',
+        url: '/musicas/:musicaId',
         template: '<musica-detalhes></musica-detalhes>',
           resolve: {
           currentUser: ($q) => {
@@ -24,6 +24,10 @@ angular.module('bobKurupi')
             }
           }
         }
+      })
+      .state('agenda-detalhes', {
+        url: '/agenda/:eventoId',
+        template: '<agenda-detalhes></agenda-detalhes>'
       })
       .state('agenda',{
         url: '/agenda',
