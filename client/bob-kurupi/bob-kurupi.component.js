@@ -3,7 +3,7 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
     restrict: 'E',
     templateUrl: 'client/bob-kurupi/bob-kurupi.html',
     controllerAs: 'bobKurupi',
-    controller: function($scope, $reactive, $mdDialog){
+    controller: function($scope, $reactive, $mdDialog, $mdSidenav){
       $reactive(this).attach($scope);
 
       this.subscribe('users');
@@ -24,6 +24,15 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
         }
       });
 
+      /*opens the leftmenu*/
+      this.openLeftMenu = () => {
+        $mdSidenav('left').toggle();
+      };
+      /*closes the let menu*/
+      this.closeLeftMenu = () => {
+        $mdSidenav('left').close();
+      };
+      /*shows the image in a dialog, making it possible to close aftwards*/
       this.showImageDialog = (image) => {
         $mdDialog.show({
           locals: {
@@ -47,7 +56,7 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
         });
       };
 
-
+      /*Logout action*/
       this.logout = () => {
         Accounts.logout();
       };

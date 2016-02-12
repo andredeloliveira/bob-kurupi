@@ -1,13 +1,59 @@
 <md-toolbar  class="barra-nav" md-scroll-shrink layout="row" layout-align="start center" layout-padding>
+ <span ng-click="bobKurupi.openLeftMenu()"><i class="fa fa-bars" aria-label="Barra de Menu"></i></span>
   <img ng-src="../resources/logo-bob.png" alt="Logo Bob Kurupi - Clique para ir para home" class="logo-nav"/>
   <span flex></span>
   <div class="navbar-right navbar-text">
     <md-button ng-href="/login" ng-hide="bobKurupi.isLoggedIn">Login</md-button>
     <md-button ng-href="/register" ng-hide="bobKurupi.isLoggedIn">Sign up</md-button>
-    <div ng-show="bobKurupi.isLoggedIn">{{ bobKurupi.currentUser.profile.name}}</div>
+
     <md-button ng-click="bobKurupi.logout()" ng-show="bobKurupi.isLoggedIn">Logout</md-button>
   </div>
 </md-toolbar>
+<div layout="row">
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    <!-- Here goes the side nav . That I'll make as a component yaaaay, or maybe just as a directive hehe-->
+    <md-card>
+        <md-card-header>
+          <md-card-avatar>
+            <span ng-click="bobKurupi.closeLeftMenu()"><i class="fa fa-arrow-left menu-back" aria-label="Fechar menu lateral"></i></span>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">Olá</span>
+            <div class="md-subhead">
+              <span ng-show="currentUser.profile.name">
+                {{currentUser.profile.name}}
+              </span>
+              <span ng-show="currentUser.profile.nome">
+                {{currentUser.profile.nome}}
+              </span>
+            </div>
+          </md-card-header-text>
+        </md-card-header>
+        <img ng-src="../resources/logo-bob.png" class="md-card-image card-height" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <div layout="column">
+            <a class="md-button" ng-click="bobKurupi.closeLeftMenu()" ng-href="/">Fotos/Vídeos</a>
+          </div>
+          <div layout="column">
+            <a class="md-button" ng-click="bobKurupi.closeLeftMenu()" ng-href="/agenda">Agenda</a>
+          </div>
+          <div layout="column">
+                <a class="md-button" ng-click="bobKurupi.closeLeftMenu()" ng-href="/musicas">Músicas</a>
+          </div>
+          <div layout="column">
+            <a class="md-button md-disabled" ng-href="/loja" disabled>Loja
+              <small><span class="md-warn">em breve!</span></small>
+            </a>
+          </div>
+        </md-card-content>
+      </md-card>
+  </md-sidenav>
+</div>
 <div ui-view>
     <div >
       <div class="header-title">

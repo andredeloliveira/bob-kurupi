@@ -1,35 +1,36 @@
-<md-content layout="row" layout-align="center start" layout-fill layout-margin layout-xs="column">
-  <div flex>
     <div class="header-title">
       <h1>Login</h1>
     </div>
-      <div layout="row" layout-fill>
+    <md-content class="login-form">
+      <div layout="column">
         <md-button class="md-raised md-primary" ng-click="login.loginFacebook()">
           <i class="fa fa-facebook button login-icon"></i>Login com Facebook</md-button>
       </div>
-      <div layout="row" layout-fill>
-        <form name="login-form">
-          <div>
-          <md-input-container>
-            <label>E-mail</label>
-            <input ng-model="login.credentials.email">
-          </md-input-container>
-        </div>
-        <div>
-          <md-input-container>
-            <label>Senha</label>
-            <input ng-model="login.credentials.senha">
-          </md-input-container>
-        </div>
-        <div >
-          <md-button ng-click="login.login()" aria-label="login ">Login</md-button>
-          <a class="md-button" href="/cadastro">Registrar-se</a>
-        </div>
-        </form>
-      </div>
-      <md-toolbar ng-show="logi.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-        <p class="md-body-1">{{ login.error }}</p>
-      </md-toolbar>
-  </div>
 
+        <form name="login-form" ng-submit="login.login()">
+          <div layout="column">
+            <md-input-container>
+              <label>E-mail</label>
+              <input ng-model="login.credentials.email">
+            </md-input-container>
+          </div>
+          <div layout="column">
+            <md-input-container>
+              <label>Senha</label>
+              <input type="password" ng-model="login.credentials.password">
+            </md-input-container>
+          </div>
+          <div layout="column">
+              <input type="submit" class="md-button md-raised" aria-label="login " value="login">
+          </div>
+          <div layout="column">
+              <a class="md-button md-raised" href="/cadastro">Registrar-se</a>
+          </div>
+
+        </form>
+
+
+      <div ng-show="login.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+        <p class="md-body-1">{{ login.error }}</p>
+      </div>
 </md-content>

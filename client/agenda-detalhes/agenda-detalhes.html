@@ -1,21 +1,27 @@
 <md-content>
-  <h1>{{agendaDetalhes.evento.nome}}</h1>
-  <div layout="row">
+  <div class="agenda-detalhes-header">
+    <h1>{{agendaDetalhes.evento.nome}}</h1>
+  </div>
+  <div layout="column">
     <div flex>
+      <h2 class="agenda-detalhes-data">Data</h2>
       <p>
-        Data: {{agendaDetalhes.evento.data}}
+        {{agendaDetalhes.evento.data}}
       </p>
     </div>
     <div flex>
-      Detalhes: {{agendaDetalhes.evento.descricao}}
+      <h2 class="agenda-detalhes-detalhes">Detalhes:</h2>
+       <p>
+         {{agendaDetalhes.evento.descricao}}
+       </p>
     </div>
   </div>
-  <div layout="row">
-    <div flex>
-      Preço {{agendaDetalhes.evento.preco | currency}}
-    </div>
+  <div flex>
+    <h2 class="agenda-detalhes-preco">Preço</h2>
+    <p>
+       R{{agendaDetalhes.evento.preco | currency}}
+    </p>
   </div>
-
     <div class="angular-google-map-container">
       <ui-gmap-google-map center="agendaDetalhes.map.center"
                         events="agendaDetalhes.map.events" zoom="agendaDetalhes.map.zoom" dragging="true">
@@ -24,5 +30,4 @@
       </ui-gmap-marker>
     </ui-gmap-google-map>
     </div>
-
 </md-content>

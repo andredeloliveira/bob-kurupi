@@ -1,10 +1,51 @@
 .header-title {
   font-family: 'Amatic SC', cursive;
-  margin-left: 60%;
-  margin-top: 80px;
+  margin-left:60%;
   font-size: 3em;
   background: #E0E0E0
 }
+
+.agenda-detalhes-header {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+  background: #E0E0E0
+}
+
+.agenda-detalhes-data {
+  font-family: 'Amatic SC', cursive;
+  color: #00C853;
+}
+.agenda-detalhes-detalhes {
+  font-family: 'Amatic SC', cursive;
+  color: #C6FF00;
+}
+.agenda-detalhes-preco {
+  font-family: 'Amatic SC', cursive;
+  color: #D50000;
+}
+
+
+
+.login-form {
+  max-width: 600px !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.menu-back {
+  font-size: 2em;
+}
+
+.card-height {
+  max-height: 250px !important;
+}
+
+.image-side-nav {
+  max-width: 200px;
+  max-height: 160px;
+}
+
 .agenda-title {
   font-family: 'Amatic SC', cursive;
   font-size: 1em;
@@ -100,8 +141,10 @@
   height: 400px;
 }
 .angular-google-map-container {
-  width: 400px;
-  height: 400px;
+
+  width: 100%;
+  height: 300px;
+
 }
 .image-dialog-container {
   max-width: 500px;

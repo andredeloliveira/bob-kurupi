@@ -7,12 +7,12 @@ angular.module('bobKurupi').directive('agendaDetalhes', function(){
       $reactive(this).attach($scope);
 
       this.subscribe('agenda');
-
       this.helpers({
         evento: () => {
           return Agenda.findOne({_id: $stateParams.eventoId});
         }
       });
+
       console.log(this.evento);
       /*map object*/
       this.map = {

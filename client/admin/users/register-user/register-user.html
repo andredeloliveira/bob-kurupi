@@ -1,34 +1,40 @@
-<md-content layout="row" layout-align="center start" layout-fill layout-margin layout-xl="column">
-  <div flex>
-    <h1>Cadastro</h1>
-      <div layout="row" layout-fill>
-        <form name="login-form">
-          <div>
-            <md-input-container>
-              <label>Nome</label>
-              <input ng-model="registerUser.credentials.nome">
-            </md-input-container>
-          </div>
-          <div>
-          <md-input-container>
-            <label>E-mail</label>
-            <input type="email" ng-model="registerUser.credentials.email">
-          </md-input-container>
-        </div>
-        <div>
-          <md-input-container>
-            <label>Senha</label>
-            <input type="password" ng-model="registerUser.credentials.password">
-          </md-input-container>
-        </div>
-        <div >
-          <md-button ng-click="registerUser.register()" aria-label="register ">Cadastrar</md-button>
-        </div>
-        </form>
+<div class="header-title">
+  <h1>Cadastro</h1>
+</div>
+<md-content class="login-form">
+    <form name="register-form" ng-submit="registerUser.register()">
+      <div layout="column">
+        <md-input-container>
+          <label>Nome</label>
+          <input ng-model="registerUser.credentials.profile.nome">
+        </md-input-container>
       </div>
-      <md-toolbar ng-show="register.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-        <p class="md-body-1">{{ register.error }}</p>
-      </md-toolbar>
-  </div>
+      <div layout="column">
+        <md-input-container>
+          <label>Email</label>
+          <input ng-model="registerUser.credentials.email">
+        </md-input-container>
+      </div>
+      <div layout="column">
+        <md-input-container>
+          <label>Senha</label>
+          <input type="password" ng-model="registerUser.credentials.password">
+        </md-input-container>
+      </div>
+      <div layout="column">
+          <input type="submit" class="md-button md-raised" aria-label="registrar" value="Registrar">
+      </div>
+      <div layout="column">
+        <p>
+          Já tem cadastro?
+        </p>
+          <a class="md-button md-raised" href="/login">Então entre!</a>
+      </div>
 
+    </form>
+
+
+  <div ng-show="login.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+    <p class="md-body-1">{{ login.error }}</p>
+  </div>
 </md-content>
