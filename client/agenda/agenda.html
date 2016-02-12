@@ -1,20 +1,22 @@
-<h1>Agenda de Shows</h1>
-<md-content >
-  <md-list layout="row">
-    <md-list-item ng-repeat="evento in agenda.agenda" layout="column" layout-xs="row" flex>
-      <div flex>
-        <h2>{{evento.nome}}</h2>
-      </div>
-      <div flex>
-        <p>
-          {{evento.data | date}}
-        </p>
-      </div>
-      <div flex>
-        {{evento.cidade}}
-      </div>
+<div class="header-title">
+    <h1>Agenda de Shows</h1>
+</div>
 
+<md-grid-list
+      md-cols-gt-xs="2" md-cols-xs="1" md-cols-sm="3" md-cols-gt-sm="4" md-cols-md="5" md-cols-gt-md="6"
+      md-row-height-gt-md="1:1" md-row-height="1:1">
+  <md-grid-tile ng-repeat="evento in agenda.agenda">
+    <div >
+      <div class="agenda-title">
+          <h2>{{evento.nome}}</h2>
+      </div>
+      <p>
+        {{evento.data | date}}
+      </p>
+      <p>
+        {{evento.cidade}}
+      </p>
       <md-button class="md-raised md-primary" ng-href="/agenda/{{evento._id}}">Ver detalhes</md-button>
-    </md-list-item>
-  </md-list>
-</md-content>
+    </div>
+  </md-grid-tile>
+</md-grid-list>

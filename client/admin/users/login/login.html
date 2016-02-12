@@ -1,8 +1,11 @@
-<md-content layout="row" layout-align="center start" layout-fill layout-margin layout-xl="column">
+<md-content layout="row" layout-align="center start" layout-fill layout-margin layout-xs="column">
   <div flex>
-    <h1>Login</h1>
+    <div class="header-title">
+      <h1>Login</h1>
+    </div>
       <div layout="row" layout-fill>
-        <md-button ng-click="login.loginFacebook()">Login com Facebook</md-button>
+        <md-button class="md-raised md-primary" ng-click="login.loginFacebook()">
+          <i class="fa fa-facebook button login-icon"></i>Login com Facebook</md-button>
       </div>
       <div layout="row" layout-fill>
         <form name="login-form">

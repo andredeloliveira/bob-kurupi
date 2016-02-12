@@ -1,10 +1,25 @@
-<h1>Musicas</h1>
+<div class="header-title">
+  <h1>Músicas</h1>
+</div>
 
 <div>
-  <ul>
-    <li ng-repeat="musica in Musicas.musicas">
-      Musica: {{musica}}
-    </li>
-  </ul>
-  <soundcloud></soundcloud>
+  <md-list layout="column">
+    <md-list-item ng-repeat="musica in Musicas.musicas" flex>
+      <div flex>
+        <div class="musica-title">
+          <p>{{musica.nome}}</p>
+        </div>
+        <div>
+          <p>
+            {{musica.descricao}}
+          </p>
+        </div>
+        <div>
+          <md-button><i class="fa fa-soundcloud musica-icon" aria-label="soundcloud"></i></md-button>
+          <md-button><i class="fa fa-youtube musica-icon" aria-label="youtube"></i></md-button>
+          <md-button><i class="fa fa-spotify musica-icon" aria-label="spotify"></i></md-button>
+        </div>
+      </div>
+    </md-list-item>
+  </md-list>
 </div>

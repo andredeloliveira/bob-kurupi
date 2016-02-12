@@ -1,12 +1,31 @@
-h2 {
-  font-family: 'Gloria Hallelujah', cursive;
+.header-title {
+  font-family: 'Amatic SC', cursive;
   margin-left: 60%;
   margin-top: 80px;
   font-size: 3em;
-  background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
-  background: -moz-linear-gradient(0deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
-  background: linear-gradient(0deg, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), rgb(0, 170, 238);
+  background: #E0E0E0
 }
+.agenda-title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1em;
+  background: #E0E0E0;
+}
+.musica-title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+  background: #E0E0E0;
+}
+
+.login-icon {
+  font-size: 1.22em;
+  margin-right: 10px;
+}
+
+
+.musica-icon {
+  font-size: 2em;
+}
+
 .admin-icons {
   font-size: 10em;
   margin-left: 35%;
