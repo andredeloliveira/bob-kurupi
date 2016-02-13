@@ -1,4 +1,4 @@
-Agenda = new Meteor.Collection("agenda");
+Agenda = new Mongo.Collection("agenda");
 
 Agenda.allow({
   insert: function(userId){

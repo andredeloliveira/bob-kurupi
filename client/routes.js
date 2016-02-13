@@ -11,20 +11,6 @@ angular.module('bobKurupi')
         url: '/musicas',
         template: '<musicas></musicas>',
       })
-      .state('musica-detalhes', {
-        url: '/musicas/:musicaId',
-        template: '<musica-detalhes></musica-detalhes>',
-          resolve: {
-          currentUser: ($q) => {
-            if (Meteor.userId() == null) {
-              return $q.reject('AUTH_REQUIRED');
-            }
-            else {
-              return $q.resolve();
-            }
-          }
-        }
-      })
       .state('agenda-detalhes', {
         url: '/agenda/:eventoId',
         template: '<agenda-detalhes></agenda-detalhes>'

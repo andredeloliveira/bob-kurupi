@@ -16,7 +16,10 @@
       <p>
         {{evento.cidade}}
       </p>
-      <md-button class="md-raised md-primary" ng-href="/agenda/{{evento._id}}">Ver detalhes</md-button>
+      <md-button class="md-raised md-primary"
+      ng-href="/agenda/{{evento._id +'?'+'latitude='+evento.map.latitude + '&'+
+              'longitude='+ evento.map.longitude + '&' + 'label=' + evento.nome}}">
+      Ver detalhes</md-button>
     </div>
   </md-grid-tile>
 </md-grid-list>

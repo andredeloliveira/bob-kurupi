@@ -1,4 +1,4 @@
-Videos = new Meteor.Collection("videos");
+Videos = new Mongo.Collection("videos");
 
 Videos.allow({
   insert: function(userId){
@@ -8,6 +8,6 @@ Videos.allow({
     return userId;
   },
   remove: function(userId){
-    return userId; 
+    return userId;
   }
 });

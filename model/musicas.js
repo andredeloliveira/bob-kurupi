@@ -1,4 +1,4 @@
-Musicas = new Meteor.Collection("musicas");
+Musicas = new Mongo.Collection("musicas");
 
 /*Permissions for the collection. Here are all the permissions for who can do what.*/
 Musicas.allow({
