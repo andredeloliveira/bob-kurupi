@@ -1,14 +1,22 @@
-<md-toolbar  class="barra-nav" md-scroll-shrink layout="row" layout-align="start center" layout-padding>
- <span ng-click="bobKurupi.openLeftMenu()"><i class="fa fa-bars" aria-label="Barra de Menu"></i></span>
-  <img ng-src="../resources/logo-bob.png" alt="Logo Bob Kurupi - Clique para ir para home" class="logo-nav"/>
-  <span flex></span>
-  <div class="navbar-right navbar-text">
-    <md-button ng-href="/login" ng-hide="bobKurupi.isLoggedIn">Login</md-button>
-    <md-button ng-href="/register" ng-hide="bobKurupi.isLoggedIn">Sign up</md-button>
+<div class="navbar-fixed " ng-hide="bobKurupi.isLeftMenuOpen()">
+    <nav>
+      <div class="nav-wrapper black">
+         <a ng-click="bobKurupi.openLeftMenu()" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="/" class="brand-logo center">
+          <img ng-src="../resources/logo-bob.png" alt="Logo Bob Kurupi - Clique para ir para home" class="logo-nav circular responsive-img"/>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li ng-hide="bobKurupi.isLoggedIn"><md-button ng-href="/login" >Entrar</md-button></li>
+          <li ng-hide="bobKurupi.isLoggedIn"><md-button ng-href="/cadastro" >Registrar-se</md-button></li>
+          <li ng-show="bobKurupi.isLoggedIn"><md-button ng-click="bobKurupi.logout()" >Logout</md-button></li>
+        </ul>
+        <ul class="left hide-on-med-and-down">
+          <a ng-click="bobKurupi.openLeftMenu()"><i class="material-icons">menu</i></a>
 
-    <md-button ng-click="bobKurupi.logout()" ng-show="bobKurupi.isLoggedIn">Logout</md-button>
+        </ul>
+      </div>
+    </nav>
   </div>
-</md-toolbar>
 <div layout="row">
   <md-sidenav md-component-id="left" class="md-sidenav-left">
     <!-- Here goes the side nav . That I'll make as a component yaaaay, or maybe just as a directive hehe-->
@@ -26,6 +34,9 @@
               <span ng-show="currentUser.profile.nome">
                 {{currentUser.profile.nome}}
               </span>
+              <a ng-show="bobKurupi.isLoggedIn" ng-href="/logout" ng-click="bobKurupi.closeLeftMenu()">Logout</a>
+              <a ng-hide="bobKurupi.isLoggedIn" ng-href="/login" ng-click="bobKurupi.closeLeftMenu()">Login</a>
+              <a ng-hide="bobKurupi.isLoggedIn" ng-href="/cadastro" ng-click="bobKurupi.closeLeftMenu()">Registrar</a>
             </div>
           </md-card-header-text>
         </md-card-header>
@@ -36,6 +47,9 @@
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
+          <div layout="column">
+            <a class="md-button" ng-click="bobKurupi.closeLeftMenu()"  ng-href="/admin">Admin Area</a>
+          </div>
           <div layout="column">
             <a class="md-button" ng-click="bobKurupi.closeLeftMenu()" ng-href="/">Fotos/Vídeos</a>
           </div>
@@ -63,10 +77,12 @@
       <md-grid-list
             md-cols-gt-xs="2" md-cols-xs="1" md-cols-sm="3" md-cols-gt-sm="4" md-cols-md="5" md-cols-gt-md="6"
             md-row-height-gt-md="1:1" md-row-height="1:1">
-        <md-grid-tile ng-repeat="image in bobKurupi.images">
+        <md-grid-tile dir-paginate="image in bobKurupi.images | itemsPerPage: bobKurupi.perPage" total-items="bobKurupi.imagesCount">
           <img style="width:200px; height:200px;" ng-click="bobKurupi.showImageDialog(image)" ng-src="{{image.url()}}" alt="Banda Bob Kurupi" />
         </md-grid-tile>
       </md-grid-list>
+      <dir-pagination-controls class="pagination" on-page-change="bobKurupi.pageChanged(newPageNumber)" style="margin-left:auto !important; margin-right:auto !important;"></dir-pagination-controls>
+
     </div>
     <div>
       <div class="header-title">
@@ -77,7 +93,6 @@
         <youtube-video class="iframe-youtube" video-id="video.videoId"></youtube-video>
       </div>
     </div>
-
 
 
 </div>

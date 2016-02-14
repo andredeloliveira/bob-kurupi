@@ -6,8 +6,21 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
     controller: function($scope, $reactive, $mdDialog, $mdSidenav, $timeout){
       $reactive(this).attach($scope);
 
+      this.perPage = 20;
+      this.page = 1;
+      this.sort = {
+        createdAt: 1
+      };
       this.subscribe('users');
-      this.subscribe('images');
+      this.subscribe('images', () => {
+        return [
+          {
+            limit: parseInt(this.perPage),
+            skip: parseInt((this.getReactively('page') -1 ) * this.perPage),
+            sort: this.getReactively('sort')
+          }
+        ]
+      });
       this.subscribe('videos');
       this.helpers({
         isLoggedIn: () => {
@@ -17,13 +30,25 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
           return Meteor.user();
         },
         images: () => {
-          return Images.find({});
+          return Images.find({}, {sort: this.getReactively('sort')});
         },
         videos: () => {
           return Videos.find({});
+        },
+        imagesCount: () => {
+          return Counts.get('numberOfImages');
         }
       });
+      this.isAdmin = () => {
+        return Meteor.user().admin;
+      };
+      this.isLeftMenuOpen = () => {
+        return $mdSidenav('left').isOpen();
+      };
 
+      this.pageChanged = (newPage) => {
+        this.page = newPage;
+      }
       /*opens the leftmenu*/
       this.openLeftMenu = () => {
         $mdSidenav('left').toggle();

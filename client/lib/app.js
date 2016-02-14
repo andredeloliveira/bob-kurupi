@@ -10,7 +10,7 @@
   'scDateTime'- for the DateTime picker
 */
 angular.module('bobKurupi', ['angular-meteor', 'ui.router', 'accounts.ui',
-'uiGmapgoogle-maps','ngMaterial','ngFileUpload', 'ngImgCrop', 'youtube-embed']);
+'uiGmapgoogle-maps','ngMaterial','ngFileUpload', 'ngImgCrop', 'youtube-embed','angularUtils.directives.dirPagination']);
 
 /*configuration for GoogleAPI provider, which the key and other libraries are set*/
 angular.module('bobKurupi').config(function(uiGmapGoogleMapApiProvider){

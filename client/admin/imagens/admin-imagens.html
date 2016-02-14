@@ -22,7 +22,7 @@
   <div flex>
     <ul>
       <li ng-repeat="image in adminImagens.images">
-        <img ng-src="{{ image.url() }}" alt="Bob Kurupi" />
+        <img ng-src="{{ image.url() }}" alt="Bob Kurupi" style="max-width: 200px!important; max-height:200px!important;" />
         <md-button ng-click="adminImagens.removeImage(image)" class="md-raised md-warn">Excluir</md-button>
       </li>
     </ul>

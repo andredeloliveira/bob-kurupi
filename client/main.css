@@ -2,7 +2,8 @@
   font-family: 'Amatic SC', cursive;
   margin-left:60%;
   font-size: 3em;
-  background: #E0E0E0
+  background: #E0E0E0;
+  margin-top: 50px;
 }
 
 .agenda-detalhes-header {
@@ -29,6 +30,8 @@
   margin-right: auto !important;
   display: block;
   padding-bottom: 30px;
+  width: 100%;
+
 }
 
 .login-form {
@@ -154,13 +157,10 @@
 
 }
 .image-dialog-container {
-  max-width: 500px;
-  max-height: 500px;
+  width: 100%;
+  height: 100%;
 }
-.teste {
-  width: 500px;
-  height: 500px;
-}
+
 .barra-nav {
   background-color: #000000 !important;
 }

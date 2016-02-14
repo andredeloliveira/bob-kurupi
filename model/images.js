@@ -24,7 +24,8 @@ if (Meteor.isServer) {
     }
   });
 
-  Meteor.publish('images', function() {
-    return Images.find({});
+  Meteor.publish('images', function(options) {
+    Counts.publish(this, 'numberOfImages', Images.find({}), {noReady: true});
+    return Images.find({}, options);
   });
 }
