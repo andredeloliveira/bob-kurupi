@@ -3,7 +3,7 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
     restrict: 'E',
     templateUrl: 'client/bob-kurupi/bob-kurupi.html',
     controllerAs: 'bobKurupi',
-    controller: function($scope, $reactive, $mdDialog, $mdSidenav){
+    controller: function($scope, $reactive, $mdDialog, $mdSidenav, $timeout){
       $reactive(this).attach($scope);
 
       this.subscribe('users');
@@ -60,6 +60,10 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
       this.logout = () => {
         Accounts.logout();
       };
+
+
+
+
     }
   }
 });

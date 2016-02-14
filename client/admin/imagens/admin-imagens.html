@@ -13,7 +13,7 @@
     <div ng-show="adminImagens.cropImgSrc" class="ng-crop-container">
       <h3>Ótimo! agora é só editar a sua imagem.</h3><br/>
       <md-button aria-label="Salvar imagem" ng-click="adminImagens.saveCroppedImage()" ng-disable="!adminImagens.cropImgSrc">Salvar Imagem</md-button>
-      <img-crop image="adminImagens.cropImgSrc" result-image="adminImagens.myCroppedImage" area-type="square"></img-crop>
+      <img-crop image="adminImagens.cropImgSrc" result-image="adminImagens.myCroppedImage" area-type="square" result-image-size="600"></img-crop>
     </div>
   </div>
 

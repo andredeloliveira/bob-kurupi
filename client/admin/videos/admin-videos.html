@@ -8,8 +8,8 @@
 </div>
 <div layout="column">
   <md-input-container class="md-block">
-        <label>URL</label>
-        <textarea ng-model="adminVideos.video.url" columns="1" md-maxlength="150" rows="5"></textarea>
+        <label>VideoId (código depois do v= na barra de endereço)</label>
+        <textarea ng-model="adminVideos.video.videoId" columns="1" md-maxlength="150" rows="5"></textarea>
   </md-input-container>
 </div>
 <div layout="column">
@@ -28,7 +28,7 @@
       </div>
       <div flex="20">
         <p>
-          {{video.url}}
+          {{video.videoId}}
         </p>
       </div>
       <div flex="20">

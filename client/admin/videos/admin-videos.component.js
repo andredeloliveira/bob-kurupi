@@ -9,7 +9,7 @@ angular.module('bobKurupi').directive('adminVideos', function(){
 
       this.video = {
           nome: '',
-          url: ''
+          videoId: ''
       };
 
       this.subscribe('videos');
@@ -26,7 +26,7 @@ angular.module('bobKurupi').directive('adminVideos', function(){
         Videos.insert(this.video);
         this.video = {
           nome: '',
-          url: ''
+          videoId: ''
         };
       };
 
@@ -61,7 +61,7 @@ angular.module('bobKurupi').directive('adminVideos', function(){
                 Videos.update({_id: video._id}, {
                 $set: {
                   'nome': this.video.nome,
-                  'url': this.video.descricao
+                  'videoId': this.video.videoId
                   }
                 });
                 this.close();

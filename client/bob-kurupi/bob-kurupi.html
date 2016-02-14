@@ -64,7 +64,7 @@
             md-cols-gt-xs="2" md-cols-xs="1" md-cols-sm="3" md-cols-gt-sm="4" md-cols-md="5" md-cols-gt-md="6"
             md-row-height-gt-md="1:1" md-row-height="1:1">
         <md-grid-tile ng-repeat="image in bobKurupi.images">
-          <img ng-click="bobKurupi.showImageDialog(image)" ng-src="{{image.url()}}" alt="Banda Bob Kurupi" />
+          <img style="width:200px; height:200px;" ng-click="bobKurupi.showImageDialog(image)" ng-src="{{image.url()}}" alt="Banda Bob Kurupi" />
         </md-grid-tile>
       </md-grid-list>
     </div>
@@ -72,7 +72,12 @@
       <div class="header-title">
           <h2 style="margin-left: 10px;">Vídeos</h2>
       </div>
+      <!-- the div inside this iframe-youtube div will become the player -->
+      <div  ng-repeat="video in bobKurupi.videos">
+        <youtube-video class="iframe-youtube" video-id="video.videoId"></youtube-video>
+      </div>
     </div>
+
 
 
 </div>
