@@ -22,9 +22,22 @@ The stack used is [Meteor.js](http://meteorjs.com) (full-stack JavaScript framew
 a NoSQL database. For the client though, [Angular.js](http://angularjs.org) is on the way, providing clear and concise code as well as routing for the client side.
 
 
-###Update
+###Testing
 
-Now the project is using TDD. Using Jasmine a test library, the SCRUM can work more precisely than before!
+
+Now the project is using TDD. Using Jasmine as a test library. SCRUM methods can really work now!
+
+##Demo
+
+Want to see it in action? Cool, now we have a demo.
+Note that the security level is really low. Also, is for demo, so the admin area is open to everyone. Feel free to test.
+The reason to show this demo is to have users feedback and improve design. Any suggestions, PLEASE create an issue with the
+appropriated label and I'll be happy to see.
+
+Do you want to help as well? Fork me! All pull requests will be carefully analyzed.
+
+Here is the link for the [DEMO]('http://bobkurupi.meteor.com')
+
 
 
 Thanks,
