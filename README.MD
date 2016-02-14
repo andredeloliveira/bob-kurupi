@@ -36,7 +36,7 @@ appropriated label and I'll be happy to see.
 
 Do you want to help as well? Fork me! All pull requests will be carefully analyzed.
 
-Here is the link for the [DEMO]('http://bobkurupi.meteor.com')
+Here is the link for the [DEMO](http://bobkurupi.meteor.com)
 
 
 
