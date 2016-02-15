@@ -40,7 +40,7 @@
             </div>
           </md-card-header-text>
         </md-card-header>
-        <img ng-src="../resources/logo-bob.png" class="md-card-image card-height" alt="Washed Out">
+          <a ng-href="/" ng-click="bobKurupi.closeLeftMenu()"><img ng-src="../resources/logo-bob.png" class="md-card-image card-height" alt="Bob Kurupi Logo"  ></a>
         <md-card-title>
           <md-card-title-text>
 
@@ -88,8 +88,9 @@
       <div class="header-title">
           <h2 style="margin-left: 10px;">Vídeos</h2>
       </div>
-      <!-- the div inside this iframe-youtube div will become the player -->
+
       <div  ng-repeat="video in bobKurupi.videos">
+        <!-- here are the video players yay -->
         <youtube-video class="iframe-youtube" video-id="video.videoId"></youtube-video>
       </div>
     </div>

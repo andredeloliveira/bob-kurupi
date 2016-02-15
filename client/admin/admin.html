@@ -5,34 +5,22 @@
       Bem-vindo ao painel de administração. Aqui você pode gerenciar as informações da sua aplicação.
     </p>
   </div>
-
-  <div layout="row" layout-align="center center" layout-xs="column" class="hide-scroll">
-    <div flex>
-
-        <i class="fa fa-microphone admin-icons"></i>
-        <div>
-          <md-button class="admin-buttons-left" ng-click="admin.goMusicasAdmin()">Músicas</md-button>
-        </div>
-    </div>
-    <div flex>
-        <i class="fa fa-calendar admin-icons" ></i>
-        <div>
-          <md-button class="admin-buttons-right" ng-click="admin.goAgendaAdmin()">Agenda</md-button>
-        </div>
-    </div>
-    <div flex>
-        <i class="fa fa-camera admin-icon-alone"></i>
-        <div>
-          <md-button class="admin-button-alone" ng-click="admin.goImagens()">Imagens</md-button>
-        </div>
-    </div>
-    <div flex>
-      <i class="fa fa-youtube admin-icons"></i>
-      <div>
-        <md-button class="admin-button-alone" ng-click="admin.goVideos()">Vídeos</md-button>
-      </div>
-    </div>
-  </div>
+  <md-grid-list
+        md-cols-gt-xs="2" md-cols-xs="1" md-cols-sm="3" md-cols-gt-sm="4" md-cols-md="5" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="1:1">
+    <md-grid-tile>
+      <i class="fa fa-microphone admin-icons" ng-click="admin.goMusicasAdmin()" alt="Musicas"></i>
+    </md-grid-tile>
+    <md-grid-tile>
+      <i class="fa fa-calendar admin-icons" ng-click="admin.goAgendaAdmin()" alt="Agenda"></i>
+    </md-grid-tile>
+    <md-grid-tile>
+      <i class="fa fa-camera admin-icon-alone" ng-click="admin.goImagens()" alt="Imagens"></i>
+    </md-grid-tile>
+    <md-grid-tile>
+        <i class="fa fa-youtube admin-icons" ng-click="admin.goVideos()" alt="Vídeos"></i>
+    </md-grid-tile>
+  </md-grid-list>
 
   <div  class="admin-content" ng-show="admin.showAdminOption(1)">
     <admin-musicas></admin-musicas>

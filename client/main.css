@@ -77,7 +77,6 @@
 
 .admin-icons {
   font-size: 10em;
-  margin-left: 35%;
   margin-top: 30px;
 }
 .admin-buttons-left {
@@ -86,14 +85,11 @@
 }
 .admin-icon-alone {
   font-size: 10em;
-  margin-left:44%;
   margin-top:30px;
 }
 .admin-button-alone {
-  margin-left: 45%;
 }
 .admin-buttons-right {
-  margin-left: 38%;
   width: 100px;
 }
  .hide-scroll {
@@ -163,4 +159,10 @@
 
 .barra-nav {
   background-color: #000000 !important;
+}
+footer {
+   left:0px;
+   bottom:0px;
+   margin-top: 50px;
+   width:100%;
 }
