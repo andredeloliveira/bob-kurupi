@@ -14,6 +14,13 @@
        <p>
          {{agendaDetalhes.evento.descricao}}
        </p>
+       <p>
+         <div ng-show="agendaDetalhes.evento.facebook">
+           Confira as notícias sobre esse evento no facebook:
+           <a href="{{agendaDetalhes.evento.facebook}}" target="_blank">{{agendaDetalhes.evento.nome}}</a>
+         </div>
+
+       </p>
     </div>
   </div>
   <div flex>

@@ -33,7 +33,16 @@ angular.module('bobKurupi')
       })
       .state('admin',{
         url: '/admin',
-        template: '<admin></admin>'
+        template: '<admin></admin>',
+        resolve: {
+          currentUser: ($q) => {
+            if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+                return $q.reject('AUTH_REQUIRED');
+            }else {
+              return $q.resolve();
+            }
+          }
+        }
       });
 
 

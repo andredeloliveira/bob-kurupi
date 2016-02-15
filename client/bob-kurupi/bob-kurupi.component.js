@@ -40,8 +40,9 @@ angular.module('bobKurupi').directive('bobKurupi', function(){
         }
       });
       this.isAdmin = () => {
-        return Meteor.user().admin;
+        return Roles.userIsInRole(Meteor.user(), ['admin'], 'banda');
       };
+      console.log(this.isAdmin());
       this.isLeftMenuOpen = () => {
         return $mdSidenav('left').isOpen();
       };

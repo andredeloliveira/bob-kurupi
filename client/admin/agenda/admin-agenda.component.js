@@ -31,6 +31,9 @@ angular.module('bobKurupi').directive('adminAgenda', function(){
       };
       /*add a new event on the agenda*/
       this.addEvento = () => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         if(this.evento.nome === ''){
           console.error('o evento precisa de pelo menos um nome.')
           return;
@@ -54,12 +57,17 @@ angular.module('bobKurupi').directive('adminAgenda', function(){
       };
       /*delete a event on the agenda*/
       this.deleteEvento = (evento) => {
-
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         Agenda.remove({_id: evento._id});
       };
 
       /*Toggle  a $mdDialog that updates the current value of the array of 'eventos' on this.eventos*/
       this.toggleEdit = (evento) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         $mdDialog.show({
           locals: {
             evento: evento

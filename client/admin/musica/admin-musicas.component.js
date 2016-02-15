@@ -34,6 +34,9 @@ angular.module('bobKurupi').directive('adminMusicas', function(){
 
       /*Add a new song in the the list of music;*/
       this.addMusica = () => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         Musicas.insert(this.musica);
         this.musica = {
           nome: '',
@@ -45,6 +48,9 @@ angular.module('bobKurupi').directive('adminMusicas', function(){
       };
       /*delete a song from the list of music*/
       this.deleteMusica = (musica) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         if(!musica){
           console.error('impossível remover música. Id inválido');
         }
@@ -54,6 +60,9 @@ angular.module('bobKurupi').directive('adminMusicas', function(){
 
       /*Toggle  a $mdDialog that updates the current value of the array of 'musicas' on this.musicas*/
       this.toggleEdit = (musica) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         $mdDialog.show({
           locals: {
             musica: musica

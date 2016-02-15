@@ -23,6 +23,9 @@ angular.module('bobKurupi').directive('adminVideos', function(){
 
       /*method to add a new video*/
       this.addVideo = () => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         Videos.insert(this.video);
         this.video = {
           nome: '',
@@ -32,11 +35,17 @@ angular.module('bobKurupi').directive('adminVideos', function(){
 
       /*method that removes a video*/
       this.deleteVideo = (video) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         Videos.remove({_id: video._id});;
       };
       /*method do toggle a new dialog to edit a certain video*/
       /*Toggle  a $mdDialog that updates the current value of the array of 'musicas' on this.musicas*/
       this.toggleEdit = (video) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         $mdDialog.show({
           locals: {
             video: video

@@ -31,6 +31,9 @@ angular.module('bobKurupi').directive('adminImagens', function(){
       };
       /*method to add images to the database*/
       this.addImages = (files) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         if(files.length > 0){
           var reader = new FileReader();
           reader.onload = (e) => {
@@ -46,6 +49,9 @@ angular.module('bobKurupi').directive('adminImagens', function(){
       };
       /*method to remove a selected image form the database*/
       this.removeImage = (image) => {
+        if(!Roles.userIsInRole(Meteor.user(), ['admin'], 'banda')){
+          throw new Meteor.Error(403,"Access denied");
+        }
         Images.remove({_id: image._id});
       }
     }

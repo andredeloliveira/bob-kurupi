@@ -48,7 +48,8 @@
         </md-card-title>
         <md-card-content>
           <div layout="column">
-            <a class="md-button" ng-click="bobKurupi.closeLeftMenu()"  ng-href="/admin">Admin Area</a>
+            <!-- this will only be shown to a user that has admin permission -->
+            <a class="md-button" ng-click="bobKurupi.closeLeftMenu()"  ng-show="bobKurupi.isAdmin()" ng-href="/admin">Administração</a>
           </div>
           <div layout="column">
             <a class="md-button" ng-click="bobKurupi.closeLeftMenu()" ng-href="/">Fotos/Vídeos</a>
