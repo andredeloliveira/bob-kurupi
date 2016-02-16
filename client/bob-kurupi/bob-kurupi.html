@@ -1,23 +1,17 @@
-<div class="navbar-fixed " ng-hide="bobKurupi.isLeftMenuOpen()">
-    <nav>
-      <div class="nav-wrapper black">
-         <a ng-click="bobKurupi.openLeftMenu()" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <a href="/" class="brand-logo center">
-          <img ng-src="../resources/logo-bob.png" alt="Logo Bob Kurupi - Clique para ir para home" class="logo-nav circular responsive-img"/>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li ng-hide="bobKurupi.isLoggedIn"><md-button ng-href="/login" >Entrar</md-button></li>
-          <li ng-hide="bobKurupi.isLoggedIn"><md-button ng-href="/cadastro" >Registrar-se</md-button></li>
-          <li ng-show="bobKurupi.isLoggedIn"><md-button ng-click="bobKurupi.logout()" >Logout</md-button></li>
-        </ul>
-        <ul class="left hide-on-med-and-down">
-          <a ng-click="bobKurupi.openLeftMenu()"><i class="material-icons">menu</i></a>
-
-        </ul>
-      </div>
-    </nav>
+<md-toolbar style="background: #000000 !important; position: fixed !important;">
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" arialabel="Menu">
+      <i class="material-icons" ng-click="bobKurupi.openLeftMenu()">menu</i>
+    </md-button>
+    <img ng-src="../resources/logo-bob.png" alt="Logo Bob Kurupi - Clique para ir para home" class="logo-nav"/>
+    <span flex></span>
+    <md-button ng-href="/login" >Entrar</md-button>
+    <md-button ng-href="/cadastro" >Registrar-se</md-button>
+    <md-button ng-click="bobKurupi.logout()" >Logout</md-button>
   </div>
-<div layout="row">
+</md-toolbar>
+<md-content>
+  <div layout="row">
   <md-sidenav md-component-id="left" class="md-sidenav-left">
     <!-- Here goes the side nav . That I'll make as a component yaaaay, or maybe just as a directive hehe-->
     <md-card>
@@ -98,3 +92,4 @@
 
 
 </div>
+</md-content>
