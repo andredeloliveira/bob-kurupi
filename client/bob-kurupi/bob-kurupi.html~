@@ -13,7 +13,7 @@
   </div>
 </md-toolbar>
 <md-content>
-  <div layout="row">
+  <div layout="row" style="margin-top: 40px;">
   <md-sidenav md-component-id="left" class="md-sidenav-left">
     <!-- Here goes the side nav . That I'll make as a component yaaaay, or maybe just as a directive hehe-->
     <md-card>
